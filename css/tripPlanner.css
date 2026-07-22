@@ -1,0 +1,2146 @@
+/* ==========================================================
+   TRIP PLANNER
+========================================================== */
+
+:root{
+
+    --primary:#ff9933;
+
+    --primary-light:#ffb84d;
+
+    --secondary:#6c63ff;
+
+    --dark:#08111f;
+
+    --card:#111c2d;
+
+    --card-2:#18253b;
+
+    --text:#ffffff;
+
+    --text-light:#b9c4d6;
+
+    --border:rgba(255,255,255,.08);
+
+    --glass:rgba(255,255,255,.05);
+
+}
+
+
+/* ==========================================================
+   BODY
+========================================================== */
+
+body{
+
+    background:
+    radial-gradient(circle at top left,#1d3b69 0%,transparent 35%),
+    radial-gradient(circle at top right,#2a174b 0%,transparent 35%),
+    linear-gradient(180deg,#07101d,#0b1628);
+
+    color:var(--text);
+
+    font-family:"Poppins",sans-serif;
+
+    overflow-x:hidden;
+
+}
+
+
+/* ==========================================================
+   HERO
+========================================================== */
+
+.planner-hero{
+
+    padding:120px 20px 70px;
+
+    text-align:center;
+
+    position:relative;
+
+}
+
+
+.planner-hero h1{
+
+    font-size:58px;
+
+    font-family:"Cinzel",serif;
+
+    font-weight:700;
+
+    margin-bottom:18px;
+
+    line-height:1.2;
+
+}
+
+
+.planner-hero p{
+
+    max-width:760px;
+
+    margin:auto;
+
+    color:var(--text-light);
+
+    font-size:18px;
+
+    line-height:1.9;
+
+}
+
+
+.hero-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:12px 22px;
+
+    border-radius:999px;
+
+    background:rgba(255,153,51,.12);
+
+    border:1px solid rgba(255,153,51,.35);
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    margin-bottom:28px;
+
+}
+
+
+/* ==========================================================
+   CONTAINER
+========================================================== */
+
+.planner-container{
+
+    width:min(1180px,92%);
+
+    margin:auto;
+
+    padding-bottom:90px;
+
+}
+
+
+/* ==========================================================
+   GLASS CARD
+========================================================== */
+
+.planner-card{
+
+    background:var(--glass);
+
+    backdrop-filter:blur(22px);
+
+    -webkit-backdrop-filter:blur(22px);
+
+    border:1px solid var(--border);
+
+    border-radius:30px;
+
+    padding:45px;
+
+    box-shadow:
+
+        0 20px 60px rgba(0,0,0,.35),
+
+        inset 0 1px rgba(255,255,255,.08);
+
+}
+
+
+.planner-card h2{
+
+    font-size:34px;
+
+    font-family:"Cinzel",serif;
+
+    margin-bottom:35px;
+
+    color:var(--text);
+
+}
+
+
+/* ==========================================================
+   FORM
+========================================================== */
+
+#tripPlannerForm{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:28px;
+
+}
+
+
+/* ==========================================================
+   SECTION TITLE
+========================================================== */
+
+.form-section-title{
+
+    font-size:22px;
+
+    font-weight:700;
+
+    margin-top:10px;
+
+    color:var(--primary);
+
+}
+
+/* ==========================================================
+   GRID
+========================================================== */
+
+.grid-2{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:24px;
+
+}
+
+
+/* ==========================================================
+   FORM GROUP
+========================================================== */
+
+.form-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+.form-group label{
+
+    font-size:15px;
+
+    font-weight:600;
+
+    color:var(--text);
+
+    letter-spacing:.4px;
+
+}
+
+
+/* ==========================================================
+   INPUT
+========================================================== */
+
+.form-group input,
+
+.form-group select,
+
+.form-group textarea{
+
+    width:100%;
+
+    padding:18px 20px;
+
+    border-radius:18px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    background:rgba(255,255,255,.04);
+
+    color:#fff;
+
+    font-size:15px;
+
+    transition:.35s;
+
+    outline:none;
+
+}
+
+
+/* ==========================================================
+   PLACEHOLDER
+========================================================== */
+
+.form-group input::placeholder,
+
+.form-group textarea::placeholder{
+
+    color:#9ba9c2;
+
+}
+
+
+/* ==========================================================
+   TEXTAREA
+========================================================== */
+
+.form-group textarea{
+
+    resize:vertical;
+
+    min-height:150px;
+
+    line-height:1.8;
+
+}
+
+
+/* ==========================================================
+   SELECT
+========================================================== */
+
+.form-group select{
+
+    appearance:none;
+
+    -webkit-appearance:none;
+
+    cursor:pointer;
+
+}
+
+
+/* ==========================================================
+   OPTION
+========================================================== */
+
+.form-group option{
+
+    background:#13223a;
+
+    color:#fff;
+
+}
+
+
+/* ==========================================================
+   FOCUS
+========================================================== */
+
+.form-group input:focus,
+
+.form-group select:focus,
+
+.form-group textarea:focus{
+
+    border-color:var(--primary);
+
+    background:rgba(255,153,51,.05);
+
+    box-shadow:
+
+        0 0 0 4px rgba(255,153,51,.12);
+
+}
+
+
+/* ==========================================================
+   READ ONLY
+========================================================== */
+
+input[readonly]{
+
+    background:rgba(255,255,255,.08);
+
+    color:#FFD166;
+
+    cursor:not-allowed;
+
+}
+
+
+/* ==========================================================
+   DATE INPUT
+========================================================== */
+
+input[type="date"]{
+
+    color:#fff;
+
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator{
+
+    filter:invert(1);
+
+    cursor:pointer;
+
+}
+
+
+/* ==========================================================
+   HOVER
+========================================================== */
+
+.form-group input:hover,
+
+.form-group select:hover,
+
+.form-group textarea:hover{
+
+    border-color:rgba(255,153,51,.35);
+
+}
+
+/* ==========================================================
+   GENERATE BUTTON
+========================================================== */
+
+.generate-btn{
+
+    width:100%;
+
+    border:none;
+
+    outline:none;
+
+    cursor:pointer;
+
+    padding:18px 28px;
+
+    border-radius:18px;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    color:#fff;
+
+    background:linear-gradient(
+        135deg,
+        #ff8a00,
+        #ffb347
+    );
+
+    transition:.35s;
+
+    box-shadow:
+    0 15px 40px rgba(255,140,0,.35);
+
+}
+
+.generate-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 25px 55px rgba(255,140,0,.45);
+
+}
+
+.generate-btn:active{
+
+    transform:scale(.98);
+
+}
+
+
+/* ==========================================================
+   LOADING STATE
+========================================================== */
+
+.generate-btn.loading{
+
+    pointer-events:none;
+
+    opacity:.8;
+
+}
+
+.generate-btn.loading::after{
+
+    content:"";
+
+    width:18px;
+
+    height:18px;
+
+    margin-left:14px;
+
+    border:3px solid rgba(255,255,255,.4);
+
+    border-top:3px solid white;
+
+    border-radius:50%;
+
+    display:inline-block;
+
+    animation:spin .8s linear infinite;
+
+}
+
+@keyframes spin{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+
+/* ==========================================================
+   RESULT SECTION
+========================================================== */
+
+.trip-result{
+
+    width:min(1180px,92%);
+
+    margin:70px auto;
+
+    display:none;
+
+}
+
+.trip-result.active{
+
+    display:block;
+
+    animation:fadeUp .6s ease;
+
+}
+
+
+/* ==========================================================
+   RESULT CARD
+========================================================== */
+
+.result-card{
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    -webkit-backdrop-filter:blur(20px);
+
+    border-radius:28px;
+
+    padding:35px;
+
+    margin-bottom:30px;
+
+    box-shadow:
+
+        0 20px 55px rgba(0,0,0,.25);
+
+}
+
+
+/* ==========================================================
+   RESULT TITLE
+========================================================== */
+
+.result-card h2{
+
+    font-family:"Cinzel",serif;
+
+    font-size:30px;
+
+    color:#FFD166;
+
+    margin-bottom:22px;
+
+}
+
+.result-card h3{
+
+    margin-top:25px;
+
+    margin-bottom:14px;
+
+    color:#fff;
+
+    font-size:22px;
+
+}
+
+.result-card p{
+
+    color:#d8e3f1;
+
+    line-height:1.9;
+
+}
+
+
+/* ==========================================================
+   RESULT LIST
+========================================================== */
+
+.result-card ul{
+
+    padding-left:20px;
+
+    margin-top:18px;
+
+}
+
+.result-card li{
+
+    color:#d8e3f1;
+
+    margin-bottom:12px;
+
+    line-height:1.8;
+
+}
+
+
+/* ==========================================================
+   BADGES
+========================================================== */
+
+.result-badges{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin:25px 0;
+
+}
+
+.result-badge{
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    background:rgba(255,153,51,.12);
+
+    border:1px solid rgba(255,153,51,.35);
+
+    color:#FFD166;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+
+/* ==========================================================
+   ANIMATION
+========================================================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media(max-width:992px){
+
+    .planner-hero h1{
+
+        font-size:46px;
+
+    }
+
+    .planner-card{
+
+        padding:35px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .planner-hero{
+
+        padding:90px 20px 50px;
+
+    }
+
+    .planner-hero h1{
+
+        font-size:36px;
+
+    }
+
+    .planner-hero p{
+
+        font-size:16px;
+
+    }
+
+    .grid-2{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .planner-card{
+
+        padding:25px;
+
+        border-radius:24px;
+
+    }
+
+    .planner-card h2{
+
+        font-size:28px;
+
+    }
+
+    .result-card{
+
+        padding:25px;
+
+    }
+
+    .result-card h2{
+
+        font-size:24px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   BACKGROUND GLOW
+========================================================== */
+
+.planner-container{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.planner-container::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+
+    height:350px;
+
+    border-radius:50%;
+
+    background:rgba(255,153,51,.08);
+
+    filter:blur(100px);
+
+    top:-120px;
+
+    left:-100px;
+
+    z-index:-1;
+
+}
+
+.planner-container::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+
+    height:300px;
+
+    border-radius:50%;
+
+    background:rgba(108,99,255,.08);
+
+    filter:blur(90px);
+
+    bottom:-100px;
+
+    right:-80px;
+
+    z-index:-1;
+
+}
+
+
+/* ==========================================================
+   SCROLLBAR
+========================================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#0a1423;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#ff9933;
+
+    border-radius:999px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#ffb347;
+
+}
+
+
+/* ==========================================================
+   SMOOTH ANIMATION
+========================================================== */
+
+.form-group{
+
+    animation:fadeUp .5s ease both;
+
+}
+
+.form-group:nth-child(2){
+
+    animation-delay:.05s;
+
+}
+
+.form-group:nth-child(3){
+
+    animation-delay:.1s;
+
+}
+
+.form-group:nth-child(4){
+
+    animation-delay:.15s;
+
+}
+
+.form-group:nth-child(5){
+
+    animation-delay:.2s;
+
+}
+
+.form-group:nth-child(6){
+
+    animation-delay:.25s;
+
+}
+
+.form-group:nth-child(7){
+
+    animation-delay:.3s;
+
+}
+
+.form-group:nth-child(8){
+
+    animation-delay:.35s;
+
+}
+
+.form-group:nth-child(9){
+
+    animation-delay:.4s;
+
+}
+
+
+/* ==========================================================
+   RESULT GRID
+========================================================== */
+
+.result-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:25px;
+
+    margin-top:30px;
+
+}
+
+
+/* ==========================================================
+   GLASS BOX
+========================================================== */
+
+.glass-box{
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    padding:24px;
+
+    transition:.35s;
+
+}
+
+.glass-box:hover{
+
+    transform:translateY(-6px);
+
+    border-color:rgba(255,153,51,.3);
+
+    box-shadow:
+
+    0 20px 45px rgba(0,0,0,.25);
+
+}
+
+
+/* ==========================================================
+   HIDDEN
+========================================================== */
+
+.hidden{
+
+    display:none !important;
+
+}
+
+.location-input{
+
+display:flex;
+
+gap:12px;
+
+align-items:center;
+
+}
+
+.location-input input{
+
+flex:1;
+
+}
+
+#detectLocationBtn{
+
+padding:14px 20px;
+
+border-radius:12px;
+
+cursor:pointer;
+
+background:linear-gradient(135deg,#ff8a00,#ff5f00);
+
+color:white;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+#detectLocationBtn:hover{
+
+transform:translateY(-2px);
+
+box-shadow:0 10px 25px rgba(255,120,0,.35);
+
+}
+
+
+/* ==========================================================
+   UPVerse Trip Renderer CSS 
+========================================================== */
+
+/* Theme */
+
+:root{
+
+    --success:#22c55e;
+
+    --bg:#f4f8fc;
+
+    --card:#ffffffcc;
+
+    --text:#1f2937;
+
+    --muted:#6b7280;
+
+    --border:#e5e7eb;
+
+    --shadow:0 15px 40px rgba(0,0,0,.12);
+
+    --radius:22px;
+
+}
+
+/* Result Section */
+
+.trip-result{
+
+    width:min(1200px,92%);
+
+    margin:40px auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:28px;
+
+}
+
+/* Glass Card */
+
+.trip-card{
+
+    background:var(--card);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.4);
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+    padding:28px;
+
+    transition:.35s;
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+}
+
+.trip-card.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+.trip-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 20px 50px rgba(37,99,235,.18);
+
+}
+
+/* Hero */
+
+.hero-card{
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    #2563eb,
+
+    #38bdf8
+
+    );
+
+    color:white;
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+.hero-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:280px;
+
+    height:280px;
+
+    right:-90px;
+
+    top:-90px;
+
+    border-radius:50%;
+
+    background:
+
+    rgba(255,255,255,.12);
+
+}
+
+.hero-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+    margin-bottom:20px;
+
+}
+
+.hero-top h1{
+
+    font-size:2rem;
+
+    font-weight:700;
+
+}
+
+.hero-card p{
+
+    line-height:1.8;
+
+    font-size:1.05rem;
+
+}
+
+/* AI Badge */
+
+.ai-badge{
+
+    background:rgba(255,255,255,.15);
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    backdrop-filter:blur(8px);
+
+    font-size:.9rem;
+
+    font-weight:600;
+
+}
+
+/* Section Headings */
+
+.trip-card h2{
+
+    font-size:1.5rem;
+
+    margin-bottom:20px;
+
+    color:var(--text);
+
+}
+
+/* Grid */
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(180px,1fr));
+
+    gap:18px;
+
+}
+
+/* Small Cards */
+
+.stat-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:22px;
+
+    text-align:center;
+
+    transition:.35s;
+
+    border:1px solid var(--border);
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:var(--primary);
+
+}
+
+.stat-card h3{
+
+    margin:10px 0;
+
+    color:var(--text);
+
+    font-size:1rem;
+
+}
+
+.stat-card p{
+
+    color:var(--muted);
+
+    font-size:.95rem;
+
+}
+
+/* Stay Grid */
+
+.stay-grid{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:18px;
+
+}
+
+.stay-grid div{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:20px;
+
+    border:1px solid var(--border);
+
+}
+
+.stay-grid strong{
+
+    display:block;
+
+    color:var(--primary);
+
+    margin-bottom:8px;
+
+}
+
+/* Buttons */
+
+.primary-btn{
+
+    border:none;
+
+    outline:none;
+
+    cursor:pointer;
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    var(--primary),
+
+    var(--secondary)
+
+    );
+
+    color:white;
+
+    padding:14px 26px;
+
+    border-radius:999px;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+.primary-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+
+    0 15px 30px
+
+    rgba(37,99,235,.25);
+
+}
+
+/* Budget Table */
+
+.budget-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin:20px 0;
+
+}
+
+.budget-table th{
+
+    background:var(--primary);
+
+    color:white;
+
+    padding:14px;
+
+}
+
+.budget-table td{
+
+    padding:14px;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.budget-table tr:hover{
+
+    background:#eff6ff;
+
+}
+
+.budget-total{
+
+    margin-top:20px;
+
+    font-size:1.3rem;
+
+    color:var(--success);
+
+    font-weight:700;
+
+}
+
+/* Utility */
+
+.hidden{
+
+    display:none !important;
+
+}
+
+/* ==========================================================
+   UPVerse Trip Renderer CSS
+   Timeline • Food • Shopping • Safety
+==========================================================*/
+
+/* --------------------------
+   Timeline
+-------------------------- */
+
+.timeline-card{
+
+    margin:18px 0;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    border:1px solid var(--border);
+
+    background:white;
+
+    transition:.3s;
+
+}
+
+.timeline-card:hover{
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.timeline-card summary{
+
+    cursor:pointer;
+
+    list-style:none;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px;
+
+    font-size:1.1rem;
+
+    font-weight:700;
+
+    background:linear-gradient(
+    135deg,
+    #2563eb,
+    #38bdf8);
+
+    color:white;
+
+}
+
+.timeline-card summary::-webkit-details-marker{
+
+    display:none;
+
+}
+
+.timeline-content{
+
+    padding:24px;
+
+}
+
+.timeline-content>div{
+
+    margin-bottom:18px;
+
+}
+
+.timeline-content strong{
+
+    color:var(--primary);
+
+}
+
+.timeline-content p{
+
+    color:var(--muted);
+
+    margin-top:6px;
+
+    line-height:1.6;
+
+}
+
+/* Timeline Info Grid */
+
+.timeline-grid{
+
+    margin-top:25px;
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(180px,1fr));
+
+    gap:16px;
+
+}
+
+.timeline-grid div{
+
+    background:#f8fbff;
+
+    border-radius:16px;
+
+    padding:18px;
+
+    text-align:center;
+
+    border:1px solid #e8eef7;
+
+    transition:.3s;
+
+}
+
+.timeline-grid div:hover{
+
+    transform:translateY(-5px);
+
+    border-color:var(--primary);
+
+}
+
+/* --------------------------
+   Food Grid
+-------------------------- */
+
+.food-grid{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:18px;
+
+}
+
+.food-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:22px;
+
+    border:1px solid var(--border);
+
+    transition:.35s;
+
+    text-align:center;
+
+}
+
+.food-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 18px 40px rgba(0,0,0,.08);
+
+}
+
+.food-card h3{
+
+    margin:12px 0;
+
+    color:var(--primary);
+
+}
+
+.food-card p{
+
+    color:var(--muted);
+
+    line-height:1.6;
+
+}
+
+/* --------------------------
+   Shopping
+-------------------------- */
+
+.shopping-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:20px;
+
+    border:1px solid var(--border);
+
+}
+
+/* --------------------------
+   Packing
+-------------------------- */
+
+.packing-list{
+
+    list-style:none;
+
+    padding:0;
+
+    margin-top:20px;
+
+}
+
+.packing-list li{
+
+    background:white;
+
+    border-radius:15px;
+
+    padding:16px 20px;
+
+    margin-bottom:12px;
+
+    border-left:6px solid var(--success);
+
+    box-shadow:0 5px 18px rgba(0,0,0,.05);
+
+    transition:.3s;
+
+}
+
+.packing-list li:hover{
+
+    transform:translateX(8px);
+
+}
+
+/* --------------------------
+   Travel Tips
+-------------------------- */
+
+.food-card h3{
+
+    font-size:1rem;
+
+}
+
+.food-card:hover h3{
+
+    color:var(--accent);
+
+}
+
+/* --------------------------
+   Safety
+-------------------------- */
+
+.food-card:nth-child(1){
+
+    border-top:4px solid #ef4444;
+
+}
+
+.food-card:nth-child(2){
+
+    border-top:4px solid #3b82f6;
+
+}
+
+.food-card:nth-child(3){
+
+    border-top:4px solid #22c55e;
+
+}
+
+/* --------------------------
+   End Card
+-------------------------- */
+
+.hero-card button{
+
+    margin-top:25px;
+
+}
+
+/* --------------------------
+   Divider
+-------------------------- */
+
+.timeline-content hr{
+
+    border:none;
+
+    height:1px;
+
+    background:#e5e7eb;
+
+    margin:22px 0;
+
+}
+
+/* ==========================================================
+   UPVerse Trip Renderer CSS 
+   Planning • Progress • Animations • Responsive
+==========================================================*/
+
+/* ==========================================================
+   AI Planning Section
+==========================================================*/
+
+.trip-ai-section{
+
+    width:min(900px,92%);
+    margin:40px auto;
+
+}
+
+.trip-ai-card{
+
+    background:rgba(255,255,255,.75);
+    backdrop-filter:blur(18px);
+    border-radius:25px;
+    padding:35px;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.12);
+
+    border:1px solid rgba(255,255,255,.4);
+
+}
+
+.trip-ai-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    margin-bottom:30px;
+
+}
+
+.trip-ai-icon{
+
+    width:70px;
+    height:70px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:2rem;
+
+    background:linear-gradient(
+    135deg,
+    #2563eb,
+    #38bdf8);
+
+    color:white;
+
+    animation:spinGlow 5s linear infinite;
+
+}
+
+.trip-ai-header h2{
+
+    margin:0;
+    color:#1f2937;
+
+}
+
+.trip-ai-header p{
+
+    color:#6b7280;
+    margin-top:5px;
+
+}
+
+/* ==========================================================
+   Progress Bar
+==========================================================*/
+
+.trip-progress{
+
+    width:100%;
+    height:14px;
+
+    border-radius:999px;
+
+    overflow:hidden;
+
+    background:#e5e7eb;
+
+    margin:25px 0;
+
+}
+
+#tripProgressFill{
+
+    width:0%;
+
+    height:100%;
+
+    border-radius:999px;
+
+    transition:1s;
+
+    background:linear-gradient(
+    90deg,
+    #2563eb,
+    #38bdf8,
+    #22c55e);
+
+}
+
+#tripProgressPercent{
+
+    text-align:right;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    color:#2563eb;
+
+    margin-bottom:15px;
+
+}
+
+#tripPlanningMessage{
+
+    font-size:18px;
+
+    font-weight:600;
+
+    color:#1f2937;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:25px;
+
+}
+
+.stepIcon{
+
+    font-size:1.4rem;
+
+}
+
+/* ==========================================================
+   Planning Steps
+==========================================================*/
+
+#tripPlanningSteps{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+.planning-step{
+
+    background:white;
+
+    padding:16px 18px;
+
+    border-radius:14px;
+
+    border-left:5px solid #22c55e;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    animation:slideFade .5s ease;
+
+    box-shadow:0 6px 18px rgba(0,0,0,.05);
+
+}
+
+/* ==========================================================
+   Loading Pulse
+==========================================================*/
+
+.loading{
+
+    animation:pulse 1.5s infinite;
+
+}
+
+/* ==========================================================
+   Reveal Animation
+==========================================================*/
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:all .8s ease;
+
+}
+
+.reveal.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/* ==========================================================
+   Hover Glow
+==========================================================*/
+
+.trip-card:hover{
+
+    box-shadow:
+
+    0 25px 60px rgba(37,99,235,.18);
+
+}
+
+/* ==========================================================
+   Scrollbar
+==========================================================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#2563eb;
+
+    border-radius:999px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#eef4ff;
+
+}
+
+/* ==========================================================
+   Success Animation
+==========================================================*/
+
+.success-pop{
+
+    animation:successPop .7s ease;
+
+}
+
+/* ==========================================================
+   Animations
+==========================================================*/
+
+@keyframes pulse{
+
+0%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.02);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+@keyframes slideFade{
+
+from{
+
+opacity:0;
+
+transform:translateX(-30px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateX(0);
+
+}
+
+}
+
+@keyframes successPop{
+
+0%{
+
+transform:scale(.7);
+
+opacity:0;
+
+}
+
+70%{
+
+transform:scale(1.08);
+
+}
+
+100%{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+}
+
+@keyframes spinGlow{
+
+0%{
+
+transform:rotate(0deg);
+
+box-shadow:0 0 0 rgba(37,99,235,.2);
+
+}
+
+50%{
+
+box-shadow:0 0 30px rgba(56,189,248,.5);
+
+}
+
+100%{
+
+transform:rotate(360deg);
+
+box-shadow:0 0 0 rgba(37,99,235,.2);
+
+}
+
+}
+
+/* ==========================================================
+   Responsive
+==========================================================*/
+
+@media(max-width:900px){
+
+.hero-top{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+}
+
+.trip-ai-header{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+.stats-grid{
+
+grid-template-columns:1fr 1fr;
+
+}
+
+.food-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.timeline-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.trip-card{
+
+padding:20px;
+
+}
+
+.trip-ai-card{
+
+padding:20px;
+
+}
+
+.hero-top h1{
+
+font-size:1.6rem;
+
+}
+
+.stats-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.stay-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.budget-table{
+
+display:block;
+
+overflow-x:auto;
+
+}
+
+.primary-btn{
+
+width:100%;
+
+}
+
+}
+
+/* ==========================================================
+   END
+========================================================== */

@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>District • UPVERSE</title>
+
+<link
+rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link
+rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+<link
+rel="stylesheet"
+href="css/global.css">
+
+<link
+rel="stylesheet"
+href="css/navbar.css">
+
+<link
+rel="stylesheet"
+href="css/district.css">
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+<div class="container nav-container">
+
+<a
+href="index.html"
+class="logo">
+
+UPVERSE
+
+</a>
+
+<nav>
+
+<ul class="nav-links">
+
+<li>
+
+<a href="index.html">
+
+Home
+
+</a>
+
+</li>
+
+<li>
+
+<a href="explore.html">
+
+Explore
+
+</a>
+
+</li>
+
+<li>
+
+<a
+class="active"
+href="#">
+
+District
+
+</a>
+
+</li>
+
+</ul>
+
+</nav>
+
+<button class="theme-btn">
+
+<i class="fa-solid fa-moon"></i>
+
+</button>
+
+</div>
+
+</header>
+
+
+
+<!-- ==========================
+        HERO
+========================== -->
+
+<section class="district-hero">
+
+<div class="container">
+
+<div class="district-left">
+
+<span class="district-badge">
+
+🤖 AI Generated
+
+</span>
+
+<h1 id="districtName">
+
+Loading...
+
+</h1>
+
+<p id="districtTagline">
+
+Preparing district information...
+
+</p>
+
+<div class="hero-buttons">
+
+<button onclick="planTrip()" 
+id="tripPlannerBtn"
+class="btn-primary">
+
+Plan Trip
+
+</button>
+
+<button
+id="shareDistrictBtn"
+class="btn-secondary">
+
+Share
+
+</button>
+
+</div>
+
+</div>
+
+<div class="district-right">
+
+<img
+
+id="districtHeroImage"
+
+src=""
+
+alt="District">
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ==========================
+        QUICK STATS
+========================== -->
+
+<section class="quick-stats">
+
+<div class="container">
+
+<div class="stat-card">
+
+<h2 id="population">
+
+--
+
+</h2>
+
+<span>
+
+Population
+
+</span>
+
+</div>
+
+<div class="stat-card">
+
+<h2 id="area">
+
+--
+
+</h2>
+
+<span>
+
+Area
+
+</span>
+
+</div>
+
+<div class="stat-card">
+
+<h2 id="bestSeason">
+
+--
+
+</h2>
+
+<span>
+
+Best Season
+
+</span>
+
+</div>
+
+<div class="stat-card">
+
+<h2 id="famousFor">
+
+--
+
+</h2>
+
+<span>
+
+Famous For
+
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================================
+        AI OVERVIEW
+========================================= -->
+
+<section class="ai-overview">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>🤖 AI Overview</span>
+
+<h2>Know Your Destination</h2>
+
+<p>
+
+AI generated summary based on history, tourism, food,
+
+culture, spirituality and hidden gems.
+
+</p>
+
+</div>
+
+<div class="overview-card">
+
+<p id="districtOverview">
+
+Loading AI summary...
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+        HIGHLIGHTS
+========================================= -->
+
+<section class="district-highlights">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>⭐ Highlights</span>
+
+<h2>What Makes It Special?</h2>
+
+</div>
+
+<div class="highlight-grid">
+
+<div class="highlight-card">
+
+<i class="fa-solid fa-landmark"></i>
+
+<h3>History</h3>
+
+<p id="historyHighlight">
+
+Loading...
+
+</p>
+
+</div>
+
+<div class="highlight-card">
+
+<i class="fa-solid fa-utensils"></i>
+
+<h3>Food</h3>
+
+<p id="foodHighlight">
+
+Loading...
+
+</p>
+
+</div>
+
+<div class="highlight-card">
+
+<i class="fa-solid fa-tree"></i>
+
+<h3>Nature</h3>
+
+<p id="natureHighlight">
+
+Loading...
+
+</p>
+
+</div>
+
+<div class="highlight-card">
+
+<i class="fa-solid fa-gopuram"></i>
+
+<h3>Spiritual</h3>
+
+<p id="spiritualHighlight">
+
+Loading...
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+        TOP ATTRACTIONS
+========================================= -->
+
+<section class="top-attractions">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>📍 Attractions</span>
+
+<h2>Must Visit Places</h2>
+
+</div>
+
+<div
+
+class="places-grid"
+
+id="placesGrid"
+
+>
+
+<!-- JS -->
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+        FOOD
+========================================= -->
+
+<section class="food-section">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>🍛 Cuisine</span>
+
+<h2>Famous Food</h2>
+
+</div>
+
+<div
+
+class="food-grid"
+
+id="foodGrid"
+
+>
+
+<!-- JS -->
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+        FESTIVALS
+========================================= -->
+
+<section class="festival-section">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>🎉 Festivals</span>
+
+<h2>Culture & Celebrations</h2>
+
+</div>
+
+<div
+
+class="festival-grid"
+
+id="festivalGrid"
+
+>
+
+<!-- JS -->
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+        HIDDEN GEMS
+========================================= -->
+
+<section class="hidden-gems">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>💎 Hidden Gems</span>
+
+<h2>Explore Beyond Tourist Spots</h2>
+
+</div>
+
+<div
+
+class="gems-grid"
+
+id="hiddenGemGrid"
+
+>
+
+<!-- JS -->
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================================
+        GALLERY
+========================================= -->
+
+<section class="gallery-section">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>📸 Gallery</span>
+
+<h2>Visual Journey</h2>
+
+<p>
+Beautiful places, heritage, food and culture.
+</p>
+
+</div>
+
+<div
+class="gallery-grid"
+id="galleryGrid">
+
+<!-- Dynamic -->
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+        LOCATION
+========================================= -->
+
+<section class="location-section">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>🗺️ Location</span>
+
+<!-- =========================================
+        INTERACTIVE MAP
+========================================= -->
+
+<section class="district-map-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>🗺️ Interactive Map</span>
+
+            <h2>Explore the District</h2>
+
+            <p>
+
+                Discover tourist places, hidden gems and important locations.
+
+            </p>
+
+        </div>
+
+        <div class="map-card">
+
+            <div id="districtMap"></div>
+
+        </div>
+
+    </div>
+
+</section>
+</section>
+
+
+
+<!-- =========================================
+        NEARBY DISTRICTS
+========================================= -->
+
+<section class="nearby-section">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>📍 Nearby</span>
+
+<h2>Nearby Districts</h2>
+
+</div>
+
+<div
+
+class="nearby-grid"
+
+id="nearbyGrid">
+
+<!-- Dynamic -->
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+        AI TRIP PLANNER
+========================================= -->
+
+<section class="trip-planner">
+
+<div class="container">
+
+<div class="planner-card">
+
+<div>
+
+<span>
+
+🤖 AI Trip Planner
+
+</span>
+
+<h2>
+
+Plan Your Perfect Trip
+
+</h2>
+
+<p>
+
+Tell UPVERSE AI your interests and get a personalized itinerary.
+
+</p>
+
+</div>
+
+<button onclick="planTrip()" 
+
+id="openPlanner"
+
+class="btn-primary">
+
+Generate Trip Plan
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================================
+        AI INSIGHTS
+========================================= -->
+
+<section class="ai-insights">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>🧠 AI Insights</span>
+
+<h2>AI Travel Intelligence</h2>
+
+<p>
+
+Personalized insights generated by UPVERSE AI for this district.
+
+</p>
+
+</div>
+
+<div class="insight-grid">
+
+<div class="insight-card">
+
+<div class="icon">
+
+⭐
+
+</div>
+
+<h3>
+
+AI Recommendation
+
+</h3>
+
+<h1 id="aiScore">
+
+95%
+
+</h1>
+
+<p>
+
+Overall destination recommendation.
+
+</p>
+
+</div>
+
+
+
+<div class="insight-card">
+
+<div class="icon">
+
+👨‍👩‍👧
+
+</div>
+
+<h3>
+
+Perfect For
+
+</h3>
+
+<div
+
+id="perfectFor"
+
+class="chips">
+
+<span>Loading...</span>
+
+</div>
+
+</div>
+
+
+
+<div class="insight-card">
+
+<div class="icon">
+
+📅
+
+</div>
+
+<h3>
+
+Best Time
+
+</h3>
+
+<h2 id="bestVisit">
+
+Loading...
+
+</h2>
+
+<p>
+
+Ideal season according to AI.
+
+</p>
+
+</div>
+
+
+
+<div class="insight-card">
+
+<div class="icon">
+
+⏱
+
+</div>
+
+<h3>
+
+Recommended Stay
+
+</h3>
+
+<h2 id="recommendedStay">
+
+Loading...
+
+</h2>
+
+<p>
+
+Suggested trip duration.
+
+</p>
+
+</div>
+
+
+
+<div class="insight-card">
+
+<div class="icon">
+
+💰
+
+</div>
+
+<h3>
+
+Budget Range
+
+</h3>
+
+<h2 id="budgetRange">
+
+Loading...
+
+</h2>
+
+<p>
+
+Estimated travel budget.
+
+</p>
+
+</div>
+
+
+
+<div class="insight-card">
+
+<div class="icon">
+
+🚀
+
+</div>
+
+<h3>
+
+Travel Style
+
+</h3>
+
+<h2 id="travelStyle">
+
+Loading...
+
+</h2>
+
+<p>
+
+Recommended experience.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================================
+        AI TRAVEL METER
+========================================= -->
+
+<section class="travel-meter">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>📊 AI Travel Meter</span>
+
+<h2>District Experience Score</h2>
+
+<p>
+
+AI analysis of different travel experiences.
+
+</p>
+
+</div>
+
+<div class="meter-card">
+
+<div id="travelMeter">
+
+<!-- JS -->
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================================
+        AI MOODS
+========================================= -->
+
+<section class="ai-mood">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>😊 AI Mood Analysis</span>
+
+<h2>How This District Feels</h2>
+
+<p>
+
+AI-generated travel vibes and personality.
+
+</p>
+
+</div>
+
+<div class="mood-card">
+
+<div
+
+id="moodGrid"
+
+class="mood-grid">
+
+<!-- JS -->
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+        ASK AI
+========================================= -->
+
+<section class="ask-ai-section">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>💬 Ask AI</span>
+
+<h2>
+
+Anything About This District
+
+</h2>
+
+</div>
+
+<div class="ask-ai-card">
+
+<textarea
+
+id="aiQuestion"
+
+placeholder="Example: Best places for photography? Best food? Hidden gems? 2-day itinerary?"
+
+></textarea>
+
+<button
+
+id="askAiBtn"
+
+class="btn-primary">
+
+Ask UPVERSE AI
+
+</button>
+
+</div>
+
+<div
+
+id="aiAnswer"
+
+class="ai-answer">
+
+AI response will appear here...
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+        GALLERY MODAL
+========================================== -->
+
+<div id="galleryModal" class="gallery-modal">
+
+    <span id="closeGalleryModal">&times;</span>
+
+    <img id="galleryModalImage">
+
+    <h3 id="galleryModalTitle"></h3>
+
+</div>
+
+<!-- =========================================
+        FOOTER
+========================================= -->
+
+<footer>
+
+<div class="container">
+
+<div class="footer-content">
+
+<h2>
+
+UPVERSE
+
+</h2>
+
+<p>
+
+Experience Uttar Pradesh through AI powered exploration, tourism and cultural intelligence.
+
+</p>
+
+</div>
+
+<div class="footer-bottom">
+
+© 2026 UPVERSE • Powered by AI • Built with ❤️ by Yash
+
+</div>
+
+</div>
+
+</footer>
+
+
+
+<!-- =========================================
+        SCRIPTS
+========================================= -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="js/districtData.js"></script>
+
+<script src="js/api.js"></script>
+<script src="js/render.js"></script>
+<script src="js/main.js"></script>
+<script src="js/gallery.js"></script>
+
+<script src="js/district.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+
+</body>
+
+</html>

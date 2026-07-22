@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Explore Uttar Pradesh • UPVERSE</title>
+
+    <meta name="description"
+          content="Explore all districts of Uttar Pradesh with AI-powered insights, tourism, history, culture and hidden gems.">
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"  href="css/global.css">
+
+    <link rel="stylesheet" href="css/navbar.css">
+
+    <link rel="stylesheet" href="css/explore.css">
+
+</head>
+
+<body>
+
+<!-- ==========================================
+                NAVBAR
+========================================== -->
+
+<header class="navbar">
+
+    <div class="container nav-container">
+
+        <a href="index.html"
+           class="logo">
+
+            UPVERSE
+
+        </a>
+
+        <nav>
+
+            <ul class="nav-links">
+
+                <li>
+
+                    <a href="index.html">
+
+                        Home
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="explore.html"
+                       class="active">
+
+                        Explore
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="">
+
+                        Raebareli
+
+                    </a>
+
+                </li>
+
+
+            </ul>
+
+        </nav>
+
+        <div class="nav-actions">
+
+            <button class="theme-btn">
+
+                <i class="fa-solid fa-moon"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ==========================================
+                HERO
+========================================== -->
+
+<section class="explore-hero">
+
+    <div class="container hero-container">
+
+        <span class="hero-tag">
+
+            🇮🇳 Incredible Uttar Pradesh
+
+        </span>
+
+        <h1>
+
+            Explore Every
+
+            <span>
+
+                District
+
+            </span>
+
+        </h1>
+
+        <p>
+
+            Search districts, monuments, food,
+            festivals, temples, heritage sites,
+            wildlife and hidden gems using
+            UPVERSE AI.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+            SMART SEARCH
+========================================== -->
+
+<section class="search-section">
+
+    <div class="container">
+
+        <div class="search-wrapper">
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+
+                    type="text"
+
+                    id="districtSearch"
+
+                    autocomplete="off"
+
+                    spellcheck="false"
+
+                    placeholder="Search district, monument, food, temple...">
+
+                <button
+
+                    id="clearSearch"
+
+                    class="clear-btn">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+                <button
+
+                    id="searchBtn"
+
+                    class="search-btn">
+
+                    <i class="fa-solid fa-compass"></i>
+
+                    Explore
+
+                </button>
+
+            </div>
+
+            <!-- Suggestions -->
+
+            <div
+
+                id="searchSuggestions"
+
+                class="search-suggestions">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+            TRENDING SEARCHES
+========================================== -->
+
+<section class="trending-searches">
+
+    <div class="container">
+
+        <div class="trending-title">
+
+            🔥 Popular Searches
+
+        </div>
+
+        <div class="trending-list">
+
+            <button class="trend-chip">
+
+                Taj Mahal
+
+            </button>
+
+            <button class="trend-chip">
+
+                Ram Mandir
+
+            </button>
+
+            <button class="trend-chip">
+
+                Kashi Vishwanath
+
+            </button>
+
+            <button class="trend-chip">
+
+                Awadhi Food
+
+            </button>
+
+            <button class="trend-chip">
+
+                Kumbh Mela
+
+            </button>
+
+            <button class="trend-chip">
+
+                RBL
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+            AI RECOMMENDATION
+========================================== 
+
+<section class="ai-recommendation">
+
+    <div class="container">
+
+        <div class="ai-card">
+
+            <div class="ai-left">
+
+                <span class="ai-badge">
+
+                    🤖 AI Powered Discovery
+
+                </span>
+
+                <h2>
+
+                    Let AI Find Your Perfect Destination
+
+                </h2>
+
+                <p>
+
+                    Don't know where to go? Describe what you want—
+                    history, spirituality, food, nature or adventure—
+                    and UPVERSE AI will recommend the best district.
+
+                </p>
+
+            </div>
+
+            <div class="ai-right">
+
+                <button
+                    id="recommendDistrict"
+                    class="btn-primary">
+
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                    Discover with AI
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+-->
+<!-- ==========================================
+            FEATURED DISTRICT
+========================================== -->
+
+<section class="featured-district">
+
+    <div class="container">
+
+        <div class="featured-card">
+
+            <div class="featured-content">
+
+                <span class="featured-tag">
+
+                    ⭐ Featured District
+
+                </span>
+
+                <h2 id="featuredTitle">
+
+                    Raebareli
+
+                </h2>
+
+                <p id="featuredDescription">
+
+                    Explore heritage, culture, politics,
+                    hidden gems and unforgettable experiences.
+
+                </p>
+
+                <div class="featured-stats">
+
+                    <div>
+
+                        <h4>Category</h4>
+
+                        <span id="featuredCategory">
+
+                            Historical
+
+                        </span>
+
+                    </div>
+
+                    <div>
+
+                        <h4>Priority</h4>
+
+                        <span id="featuredPriority">
+
+                            ⭐ Featured
+
+                        </span>
+
+                    </div>
+
+                    <div>
+
+                        <h4>AI Ready</h4>
+
+                        <span>
+
+                            ✓ Enabled
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <button
+
+                    id="exploreFeaturedDistrict" onclick="openDistrict('raebareli')"
+
+                    class="btn-primary">
+
+                    Explore District
+
+                </button>
+
+            </div>
+
+            <div class="featured-image">
+
+                <img
+
+                    id="featuredImage"
+
+                    src="assets/districts/raebareli.webp"
+
+                    alt="Featured District">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+            DISTRICT GRID
+========================================== -->
+
+<section class="district-grid-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>
+
+                Browse Uttar Pradesh
+
+            </span>
+
+            <h2>
+
+                Explore Districts
+
+            </h2>
+
+            <p>
+
+                Search by district name, monument,
+                famous food, temple or any keyword.
+
+            </p>
+
+        </div>
+
+        <div
+
+            id="districtGrid"
+
+            class="district-grid">
+
+            <!-- Dynamic Cards -->
+
+        </div>
+
+        <div class="load-more-wrapper">
+
+            <button
+
+                id="loadMoreBtn"
+
+                class="btn-primary">
+
+                Load More Districts
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+            EMPTY STATE
+========================================== -->
+
+<section
+
+    id="emptyState"
+
+    class="empty-state hidden">
+
+    <div class="container">
+
+        <i class="fa-solid fa-map-location-dot"></i>
+
+        <h2>
+
+            No Matching District Found
+
+        </h2>
+
+        <p>
+
+            Try another district name, landmark,
+            food or historical place.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+            LOADING SKELETON
+========================================== -->
+
+<section
+
+    id="loadingSkeleton"
+
+    class="loading-skeleton hidden">
+
+    <div class="container">
+
+        <div class="skeleton-grid">
+
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+            AI LOADING OVERLAY
+========================================== -->
+
+<div
+
+    id="loader"
+
+    class="loader hidden">
+
+    <div class="loader-card">
+
+        <div class="loader-spinner"></div>
+
+        <h2>
+
+            UPVERSE AI is Exploring...
+
+        </h2>
+
+        <p>
+
+            Collecting history, tourism,
+            culture, food and hidden gems...
+
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- ==========================================
+            FLOATING ACTION BUTTONS
+========================================== -->
+
+<div class="floating-actions">
+
+    <button
+
+        id="scrollTopBtn"
+
+        class="fab"
+
+        title="Scroll To Top">
+
+        <i class="fa-solid fa-arrow-up"></i>
+
+    </button>
+
+    <button
+
+        id="randomDistrictBtn"
+
+        class="fab"
+
+        title="Random District">
+
+        <i class="fa-solid fa-dice"></i>
+
+    </button>
+
+</div>
+
+
+<!-- ==========================================
+            EXPLORE SUMMARY
+========================================== -->
+
+<section class="explore-summary">
+
+    <div class="container">
+
+        <div class="summary-card">
+
+            <h3>
+
+                75
+
+            </h3>
+
+            <span>
+
+                Districts
+
+            </span>
+
+        </div>
+
+        <div class="summary-card">
+
+            <h3>
+
+                100+
+
+            </h3>
+
+            <span>
+
+                Attractions
+
+            </span>
+
+        </div>
+
+        <div class="summary-card">
+
+            <h3>
+
+                AI
+
+            </h3>
+
+            <span>
+
+                Powered Discovery
+
+            </span>
+
+        </div>
+
+        <div class="summary-card">
+
+            <h3>
+
+                24×7
+
+            </h3>
+
+            <span>
+
+                Explore Anytime
+
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+                FOOTER
+========================================== -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-content">
+
+            <h2>
+
+                UPVERSE
+
+            </h2>
+
+            <p>
+
+                Experience Uttar Pradesh through
+                technology, artificial intelligence,
+                culture, heritage and innovation.
+
+            </p>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            © 2026 UPVERSE • Built with 💙 by Yash
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- ==========================================
+            JAVASCRIPT FILES
+========================================== -->
+
+<script src="js/main.js"></script>
+
+<script src="js/districtData.js"></script>
+
+<script src="js/api.js"></script>
+
+<script src="js/explore.js"></script>
+
+</body>
+
+</html>
