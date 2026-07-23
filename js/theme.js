@@ -1,106 +1,44 @@
-/* ==========================================
-   HERO SECTION
-========================================== */
+document.addEventListener("DOMContentLoaded", () => {
 
-.hero{
-    position: relative;
-    min-height: 95vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    overflow: hidden;
+    const body = document.body;
+    const themeBtn = document.getElementById("themeToggle");
+    const icon = themeBtn.querySelector("i");
 
-    padding-top: 120px;
-    padding-bottom: 80px;
+    // Load saved theme
+    let currentTheme = localStorage.getItem("theme") || "dark";
 
-    background:
-        radial-gradient(circle at top left,
-        rgba(255,153,51,.18),
-        transparent 35%),
+    body.setAttribute("data-theme", currentTheme);
+    updateIcon();
 
-        radial-gradient(circle at bottom right,
-        rgba(59,130,246,.16),
-        transparent 40%),
+    themeBtn.addEventListener("click", () => {
 
-        linear-gradient(
-        180deg,
-        #081120 0%,
-        #0B1730 100%);
-}
+        currentTheme = currentTheme === "dark" ? "light" : "dark";
 
+        body.setAttribute("data-theme", currentTheme);
 
-/* ==========================================
-   BACKGROUND IMAGE
-========================================== */
+        localStorage.setItem("theme", currentTheme);
 
-.hero-bg{
+        updateIcon();
 
-    position:absolute;
-    inset:0;
+    });
 
-    background-image:url("../assets/images/hero/hero-main.webp");
+    function updateIcon() {
 
-    background-size:cover;
-    background-position:center;
+        if (currentTheme === "dark") {
 
-    opacity:.12;
+            icon.classList.remove("fa-sun");
+            icon.classList.add("fa-moon");
 
-    transform:scale(1.08);
+        } else {
 
-    z-index:1;
+            icon.classList.remove("fa-moon");
+            icon.classList.add("fa-sun");
 
-}
+        }
 
+    }
 
-/* ==========================================
-   DARK OVERLAY
-========================================== */
-
-.hero-overlay{
-
-    position:absolute;
-
-    inset:0;
-
-    background:linear-gradient(
-        90deg,
-        rgba(8,17,32,.95) 0%,
-        rgba(8,17,32,.78) 45%,
-        rgba(8,17,32,.92) 100%
-    );
-
-    z-index:2;
-
-}
-
-
-/* ==========================================
-   GLOW EFFECTS
-========================================== */
-
-.hero-glow{
-
-    position:absolute;
-
-    border-radius:50%;
-
-    filter:blur(140px);
-
-    pointer-events:none;
-
-    z-index:2;
-
-}
-
-.glow-1{
-
-    width:450px;
-    height:450px;
-
-    background:rgba(255,153,51,.18);
-
-    left:-120px;
-    top:-100px;
+});    top:-100px;
 
 }
 
