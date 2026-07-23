@@ -278,3 +278,25 @@ header.scrolled{
     }
 
 }
+
+:root{
+
+    --bg:#0d1117;
+    --text:#ffffff;
+
+}
+
+body[data-theme="light"]{
+
+    --bg:#ffffff;
+    --text:#111111;
+
+}
+
+body{
+
+    background:var(--bg);
+    color:var(--text);
+    transition:.3s ease;
+
+}
